@@ -44,16 +44,20 @@ class MainApplication(ModeDifficultHero):
         print('*************** You are in difficult mode ******************')
         print('In this difficult mode, you can print current inventory, add new inventory, print special combination to defeat enemies')
         s = ModeDifficultHero()
-        user_input = input(
-            '\nWhat you want to do:\n1: Print current inventory\n2: Add new inventor\n3: print special combination to defeat enemies\nEnter:\n')
 
-        if user_input == '1':
-            s.print_inventory()
-        elif user_input == '2':
-            s.add_inventory()
-            s.print_inventory()
-        elif user_input == '3':
-            s.print_special_combination_to_defeat_enemy()
+        while True:
+            user_input = input('\nWhat you want to do:\n1: Print current inventory\n2: Add new inventor\n3: print special combination to defeat enemies\n0: Done\nEnter:\n')
+
+            if user_input == '1':
+                s.print_inventory()
+            elif user_input == '2':
+                s.add_inventory()
+                s.print_inventory()
+            elif user_input == '3':
+                s.print_special_combination_to_defeat_enemy()
+            else:
+                break
+
 
     def __init__(self):
 
@@ -64,7 +68,7 @@ class MainApplication(ModeDifficultHero):
         }
 
         while True:
-
+            print('********************* Main menu ***********************')
             user_input = input(
                 '\nPlease enter 0 - 2\n1: mode easy (You can not add new inventory)\n2: mode difficult (You can add new inventory and print special combination to defeat enemies)\n0: Quit\n\nEnter:')
 
